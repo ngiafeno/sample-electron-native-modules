@@ -1,10 +1,8 @@
 // Extraction of all functions from the dll
 
-import ffi from "ffi-napi";
-import ref from "ref-napi";
-import path from "path";
+const ffi = require("ffi-napi");
 
-const calls = ffi.Library(path.resolve(__dirname, "./mathFunctions.dll"), {
+const calls = ffi.Library("mathFunctions", {
   add: ["int", ["int", "int"]],
 });
 
